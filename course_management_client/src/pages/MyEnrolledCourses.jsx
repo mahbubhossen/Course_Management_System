@@ -69,7 +69,7 @@ const MyEnrolledCourses = () => {
     return <p className="text-center mt-6">No enrolled courses.</p>;
 
   return (
-    <div className="max-w-6xl mx-auto mt-10 p-4">
+    <div className="max-w-6xl mx-auto mt-18 p-4 ">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800">
         My Enrolled Courses
       </h2>

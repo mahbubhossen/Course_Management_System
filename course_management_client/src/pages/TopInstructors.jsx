@@ -28,7 +28,7 @@ const TopInstructors = () => {
   if (error) return <p className="text-red-600 text-center mt-8">{error}</p>;
 
   return (
-    <section className="max-w-3xl mx-auto px-4 my-10">
+    <section className="max-w-3xl mx-auto px-4 my-10 mt-18">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800 text-center">
         Top Instructors
       </h2>

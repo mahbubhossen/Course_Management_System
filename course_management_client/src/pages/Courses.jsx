@@ -40,9 +40,10 @@ const Courses = () => {
 
   return (
     <section className="max-w-7xl mx-auto px-4 my-10 mt-18">
-      <h2 className="text-3xl font-semibold mb-6 text-gray-800 text-center sm:text-left">
+      <h2 className="text-3xl font-semibold mb-6 text-gray-800 text-center">
         All Courses
       </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {courses.map((course) => (
           <div

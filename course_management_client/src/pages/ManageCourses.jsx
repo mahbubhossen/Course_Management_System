@@ -57,7 +57,7 @@ const ManageCourses = () => {
     return <p className="text-center mt-8">Loading your courses...</p>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10 mt-18">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800">
         Manage Your Courses
       </h2>

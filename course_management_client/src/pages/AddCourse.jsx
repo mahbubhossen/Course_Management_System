@@ -70,7 +70,7 @@ const AddCourse = () => {
   };
 
   return (
-    <div className="max-w-xl w-full mx-auto mt-10 p-6 sm:p-8 bg-white shadow-md rounded">
+    <div className="max-w-xl w-full mx-auto mt-10 p-6 sm:p-8 bg-white shadow-md rounded mt-18">
       <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center text-gray-800">
         Add a New Course
       </h2>
