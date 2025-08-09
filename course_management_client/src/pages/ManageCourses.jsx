@@ -57,8 +57,8 @@ const ManageCourses = () => {
     return <p className="text-center mt-8">Loading your courses...</p>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 mt-18">
-      <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+    <div className="max-w-6xl mx-auto px-4 py-10 mt-18 text-base-content">
+      <h2 className="text-3xl font-semibold mb-6">
         Manage Your Courses
       </h2>
       {courses.length === 0 ? (
@@ -68,7 +68,7 @@ const ManageCourses = () => {
       ) : (
         <div className="overflow-x-hidden sm:overflow-x-auto">
           <table className="w-full border min-w-full sm:min-w-[600px]">
-            <thead>
+            <thead className="text-gray-800">
               <tr className="bg-gray-200 text-left">
                 <th className="py-2 px-4 border">Title</th>
                 <th className="py-2 px-4 border hidden sm:table-cell">
@@ -83,7 +83,7 @@ const ManageCourses = () => {
                 const seatsLeft =
                   (course.seats || 0) - (course.enrollmentsCount || 0);
                 return (
-                  <tr key={course._id} className="border-b hover:bg-gray-50">
+                  <tr key={course._id} className="border-b ">
                     <td className="py-2 px-4 break-words max-w-xs">
                       {course.title}
                     </td>

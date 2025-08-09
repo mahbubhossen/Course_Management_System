@@ -2,8 +2,8 @@ import React from "react";
 
 const WhyChooseUs = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-center">
+    <section className="max-w-7xl mx-auto px-4 py-12 text-base-content">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
         Why Choose Us?
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">

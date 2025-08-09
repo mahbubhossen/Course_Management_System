@@ -39,12 +39,12 @@ const Courses = () => {
   if (error) return <p className="text-red-600 text-center mt-8">{error}</p>;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 my-10 mt-18">
-      <h2 className="text-3xl font-semibold mb-6 text-gray-800 text-center">
+    <section className="max-w-7xl mx-auto px-4 my-10 mt-18 text-base-content">
+      <h2 className="text-3xl font-semibold mb-6 text-center">
         All Courses
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-800">
         {courses.map((course) => (
           <div
             key={course._id}

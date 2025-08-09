@@ -75,9 +75,9 @@ const AddCourse = () => {
         Add a New Course
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 text-gray-800">
         <div>
-          <label className="block font-medium mb-1">Course Title</label>
+          <label className="block font-medium mb-1 ">Course Title</label>
           <input
             type="text"
             name="title"

@@ -26,14 +26,14 @@ const PopularCourses = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 mt-16">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">
+    <section className="max-w-7xl mx-auto px-4 mt-16 text-base-content">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
         Popular Courses
       </h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-800">
           {popularCourses.map((course) => (
             <div
               key={course._id}

@@ -28,8 +28,8 @@ const TopInstructors = () => {
   if (error) return <p className="text-red-600 text-center mt-8">{error}</p>;
 
   return (
-    <section className="max-w-3xl mx-auto px-4 my-10 mt-18">
-      <h2 className="text-3xl font-semibold mb-6 text-gray-800 text-center">
+    <section className="max-w-3xl mx-auto px-4 my-10 mt-18 text-base-content">
+      <h2 className="text-3xl font-semibold mb-6 text-center">
         Top Instructors
       </h2>
       <ul className="bg-white shadow-md rounded divide-y">
@@ -38,7 +38,7 @@ const TopInstructors = () => {
             key={index}
             className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0"
           >
-            <div>
+            <div className="text-gray-600">
               <p className="text-lg font-semibold">{instructor.name}</p>
               <p className="text-sm text-gray-600 break-words max-w-xs sm:max-w-none">
                 {instructor._id}

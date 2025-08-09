@@ -81,11 +81,11 @@ const CoursesSection = () => {
     return <p className="text-center mt-8 text-red-600">Error: {error}</p>;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 my-10">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">
+    <section className="max-w-7xl mx-auto px-4 my-10 text-base-content">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 ">
         Latest Courses
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-800">
         {courses.slice(0, displayCount).map((course) => (
           <div
             key={course._id}
