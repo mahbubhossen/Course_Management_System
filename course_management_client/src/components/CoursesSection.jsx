@@ -9,8 +9,7 @@ const CoursesSection = () => {
     if (typeof window !== "undefined") {
       const width = window.innerWidth;
       if (width < 640) return 4;
-      else if (width >= 640 && width < 1024)
-        return 6; 
+      else if (width >= 640 && width < 1024) return 6;
       else return 8;
     }
     return 8;
@@ -46,7 +45,9 @@ const CoursesSection = () => {
     const fetchCourses = async () => {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:3000/courses?limit=8");
+        const res = await fetch(
+          "https://course-management-server-self.vercel.app/courses?limit=8"
+        );
         if (!res.ok) throw new Error("Failed to fetch courses");
         const data = await res.json();
         const sortedCourses = data.sort(

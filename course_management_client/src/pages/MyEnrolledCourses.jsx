@@ -16,7 +16,7 @@ const MyEnrolledCourses = () => {
   const fetchEnrolledCourses = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/my-enrollments?email=${user?.email}`
+        `https://course-management-server-self.vercel.app/my-enrollments?email=${user?.email}`
       );
       if (!res.ok) throw new Error("Failed to fetch enrolled courses");
       const data = await res.json();
@@ -43,7 +43,7 @@ const MyEnrolledCourses = () => {
   const handleConfirmDelete = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/enrollments/${selectedEnrollmentId}`,
+        `https://course-management-server-self.vercel.app/enrollments/${selectedEnrollmentId}`,
         { method: "DELETE" }
       );
 
@@ -70,17 +70,19 @@ const MyEnrolledCourses = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-18 p-4 text-base-content">
-      <h2 className="text-3xl font-semibold mb-6 ">
-        My Enrolled Courses
-      </h2>
+      <h2 className="text-3xl font-semibold mb-6 ">My Enrolled Courses</h2>
       {/* Fixed responsiveness here: prevent horizontal scroll on mobile */}
       <div className="overflow-x-hidden sm:overflow-x-auto text-gray-800">
         <table className="w-full border min-w-full sm:min-w-[600px] bg-white">
           <thead className="bg-gray-100 text-left">
             <tr>
               <th className="py-3 px-4 border-b">Title</th>
-              <th className="py-3 px-4 border-b hidden sm:table-cell">Duration</th>
-              <th className="py-3 px-4 border-b hidden md:table-cell">Enrolled At</th>
+              <th className="py-3 px-4 border-b hidden sm:table-cell">
+                Duration
+              </th>
+              <th className="py-3 px-4 border-b hidden md:table-cell">
+                Enrolled At
+              </th>
               <th className="py-3 px-4 border-b text-center">Actions</th>
             </tr>
           </thead>

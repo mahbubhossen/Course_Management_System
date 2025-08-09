@@ -9,7 +9,9 @@ const PopularCourses = () => {
   useEffect(() => {
     const fetchPopular = async () => {
       try {
-        const res = await fetch("http://localhost:3000/popular-courses");
+        const res = await fetch(
+          "https://course-management-server-self.vercel.app/popular-courses"
+        );
         const data = await res.json();
         setPopularCourses(data);
       } catch (err) {

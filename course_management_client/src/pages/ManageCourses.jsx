@@ -18,7 +18,7 @@ const ManageCourses = () => {
       if (!user) return;
       try {
         const res = await fetch(
-          `http://localhost:3000/user-courses?email=${user.email}`
+          `https://course-management-server-self.vercel.app/user-courses?email=${user.email}`
         );
         const data = await res.json();
         setCourses(data);
@@ -35,9 +35,12 @@ const ManageCourses = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/courses/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://course-management-server-self.vercel.app/courses/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!res.ok) throw new Error("Delete failed");
 
       setCourses(courses.filter((course) => course._id !== id));
@@ -58,9 +61,7 @@ const ManageCourses = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 mt-18 text-base-content">
-      <h2 className="text-3xl font-semibold mb-6">
-        Manage Your Courses
-      </h2>
+      <h2 className="text-3xl font-semibold mb-6">Manage Your Courses</h2>
       {courses.length === 0 ? (
         <p className="text-center text-gray-600">
           You haven’t added any courses yet.

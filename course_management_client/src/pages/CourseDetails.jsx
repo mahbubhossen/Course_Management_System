@@ -19,7 +19,9 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/courses/${id}`);
+        const res = await fetch(
+          `https://course-management-server-self.vercel.app/courses/${id}`
+        );
         if (!res.ok) throw new Error("Failed to load course");
         const data = await res.json();
         setCourse(data);
@@ -36,7 +38,7 @@ const CourseDetails = () => {
       try {
         if (user?.email) {
           const res = await fetch(
-            `http://localhost:3000/enrollments?email=${user.email}&courseId=${id}`
+            `https://course-management-server-self.vercel.app/enrollments?email=${user.email}&courseId=${id}`
           );
           if (!res.ok) throw new Error("Failed to check enrollment");
           const data = await res.json();
@@ -48,7 +50,7 @@ const CourseDetails = () => {
         }
 
         const countRes = await fetch(
-          `http://localhost:3000/enrollments/count/${id}`
+          `https://course-management-server-self.vercel.app/enrollments/count/${id}`
         );
         if (!countRes.ok) throw new Error("Failed to load enrollment count");
         const countData = await countRes.json();
@@ -76,7 +78,7 @@ const CourseDetails = () => {
       }
       try {
         const res = await fetch(
-          `http://localhost:3000/enrollments/${enrollmentId}`,
+          `https://course-management-server-self.vercel.app/enrollments/${enrollmentId}`,
           { method: "DELETE" }
         );
         if (!res.ok) throw new Error("Unenrollment failed");
@@ -96,11 +98,14 @@ const CourseDetails = () => {
       }
 
       try {
-        const res = await fetch("http://localhost:3000/enrollments", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: user.email, courseId: id }),
-        });
+        const res = await fetch(
+          "https://course-management-server-self.vercel.app/enrollments",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: user.email, courseId: id }),
+          }
+        );
 
         if (res.status === 201) {
           const result = await res.json();

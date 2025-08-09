@@ -37,13 +37,16 @@ const AddCourse = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/courses", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newCourse),
-      });
+      const response = await fetch(
+        "https://course-management-server-self.vercel.app/courses",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newCourse),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add course");
@@ -75,7 +78,10 @@ const AddCourse = () => {
         Add a New Course
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 text-gray-800">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 sm:space-y-5 text-gray-800"
+      >
         <div>
           <label className="block font-medium mb-1 ">Course Title</label>
           <input

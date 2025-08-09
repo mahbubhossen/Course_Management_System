@@ -25,7 +25,9 @@ const EditCourse = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/courses/${id}`);
+        const res = await fetch(
+          `https://course-management-server-self.vercel.app/courses/${id}`
+        );
         if (!res.ok) throw new Error("Failed to fetch course");
         const data = await res.json();
         setFormData({
@@ -63,13 +65,16 @@ const EditCourse = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/courses/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedCourse),
-      });
+      const res = await fetch(
+        `https://course-management-server-self.vercel.app/courses/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedCourse),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to update course");
 
