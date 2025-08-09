@@ -4,10 +4,43 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CoursesSection = () => {
+  // Initialize displayCount based on current window width to avoid flashing 8 cards on mobile
+  const getInitialDisplayCount = () => {
+    if (typeof window !== "undefined") {
+      const width = window.innerWidth;
+      if (width < 640) return 4;
+      else if (width >= 640 && width < 1024)
+        return 6; 
+      else return 8;
+    }
+    return 8;
+  };
+
   const [courses, setCourses] = useState([]);
+  const [displayCount, setDisplayCount] = useState(getInitialDisplayCount());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  const updateDisplayCount = () => {
+    const width = window.innerWidth;
+    if (width < 640) {
+      setDisplayCount(4);
+    } else if (width >= 640 && width < 1024) {
+      setDisplayCount(6);
+    } else {
+      setDisplayCount(8);
+    }
+  };
+
+  useEffect(() => {
+    updateDisplayCount();
+
+    window.addEventListener("resize", updateDisplayCount);
+    return () => {
+      window.removeEventListener("resize", updateDisplayCount);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -19,7 +52,7 @@ const CoursesSection = () => {
         const sortedCourses = data.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
-        setCourses(sortedCourses.slice(0, 8));
+        setCourses(sortedCourses);
       } catch (err) {
         setError(err.message);
         toast.error(`Error: ${err.message}`, { autoClose: 3000 });
@@ -52,8 +85,8 @@ const CoursesSection = () => {
       <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">
         Latest Courses
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {courses.map((course) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {courses.slice(0, displayCount).map((course) => (
           <div
             key={course._id}
             className="bg-white shadow-md rounded overflow-hidden flex flex-col"

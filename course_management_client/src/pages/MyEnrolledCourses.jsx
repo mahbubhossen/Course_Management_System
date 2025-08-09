@@ -69,21 +69,18 @@ const MyEnrolledCourses = () => {
     return <p className="text-center mt-6">No enrolled courses.</p>;
 
   return (
-    <div className="max-w-6xl mx-auto mt-18 p-4 ">
+    <div className="max-w-6xl mx-auto mt-18 p-4">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800">
         My Enrolled Courses
       </h2>
-      <div className="overflow-x-auto">
-        <table className="min-w-[600px] w-full bg-white border">
+      {/* Fixed responsiveness here: prevent horizontal scroll on mobile */}
+      <div className="overflow-x-hidden sm:overflow-x-auto">
+        <table className="w-full border min-w-full sm:min-w-[600px] bg-white">
           <thead className="bg-gray-100 text-left">
             <tr>
               <th className="py-3 px-4 border-b">Title</th>
-              <th className="py-3 px-4 border-b hidden sm:table-cell">
-                Duration
-              </th>
-              <th className="py-3 px-4 border-b hidden md:table-cell">
-                Enrolled At
-              </th>
+              <th className="py-3 px-4 border-b hidden sm:table-cell">Duration</th>
+              <th className="py-3 px-4 border-b hidden md:table-cell">Enrolled At</th>
               <th className="py-3 px-4 border-b text-center">Actions</th>
             </tr>
           </thead>

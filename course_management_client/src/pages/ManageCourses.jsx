@@ -66,8 +66,8 @@ const ManageCourses = () => {
           You haven’t added any courses yet.
         </p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full border min-w-[600px]">
+        <div className="overflow-x-hidden sm:overflow-x-auto">
+          <table className="w-full border min-w-full sm:min-w-[600px]">
             <thead>
               <tr className="bg-gray-200 text-left">
                 <th className="py-2 px-4 border">Title</th>

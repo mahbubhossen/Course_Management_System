@@ -4,7 +4,7 @@ import banner from "../assets/slide3.jpg";
 const Banner = () => {
   return (
     <section
-      className="mx-4 mt-18 rounded relative h-[500px] bg-center bg-cover flex items-center"
+      className="m-0 mt-18 rounded relative h-[500px] bg-center bg-cover flex items-center md:mx-4 "
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${banner})`,
       }}
