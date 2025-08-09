@@ -16,7 +16,7 @@ const MyEnrolledCourses = () => {
   const fetchEnrolledCourses = async () => {
     try {
       const res = await fetch(
-        `https://course-management-server-self.vercel.app/my-enrollments?email=${user?.email}`
+        `http://localhost:3000/my-enrollments?email=${user?.email}`
       );
       if (!res.ok) throw new Error("Failed to fetch enrolled courses");
       const data = await res.json();
@@ -43,7 +43,7 @@ const MyEnrolledCourses = () => {
   const handleConfirmDelete = async () => {
     try {
       const res = await fetch(
-        `https://course-management-server-self.vercel.app/enrollments/${selectedEnrollmentId}`,
+        `http://localhost:3000/enrollments/${selectedEnrollmentId}`,
         { method: "DELETE" }
       );
 

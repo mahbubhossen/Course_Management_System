@@ -18,7 +18,7 @@ const ManageCourses = () => {
       if (!user) return;
       try {
         const res = await fetch(
-          `https://course-management-server-self.vercel.app/user-courses?email=${user.email}`
+          `http://localhost:3000/user-courses?email=${user.email}`
         );
         const data = await res.json();
         setCourses(data);
@@ -35,12 +35,9 @@ const ManageCourses = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(
-        `https://course-management-server-self.vercel.app/courses/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`http://localhost:3000/courses/${id}`, {
+        method: "DELETE",
+      });
       if (!res.ok) throw new Error("Delete failed");
 
       setCourses(courses.filter((course) => course._id !== id));

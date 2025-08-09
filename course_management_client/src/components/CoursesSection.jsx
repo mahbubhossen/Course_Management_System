@@ -13,9 +13,7 @@ const CoursesSection = () => {
     const fetchCourses = async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          "https://course-management-server-self.vercel.app/courses?limit=6"
-        );
+        const res = await fetch("http://localhost:3000/courses?limit=8");
         if (!res.ok) throw new Error("Failed to fetch courses");
         const data = await res.json();
         const sortedCourses = data.sort(
@@ -57,7 +55,7 @@ const CoursesSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {courses.map((course) => (
           <div
-            key={course._id} 
+            key={course._id}
             className="bg-white shadow-md rounded overflow-hidden flex flex-col"
           >
             <img

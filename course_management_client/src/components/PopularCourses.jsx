@@ -9,9 +9,7 @@ const PopularCourses = () => {
   useEffect(() => {
     const fetchPopular = async () => {
       try {
-        const res = await fetch(
-          "https://course-management-server-self.vercel.app/popular-courses"
-        );
+        const res = await fetch("http://localhost:3000/popular-courses");
         const data = await res.json();
         setPopularCourses(data);
       } catch (err) {
@@ -35,7 +33,7 @@ const PopularCourses = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {popularCourses.map((course) => (
             <div
               key={course._id}

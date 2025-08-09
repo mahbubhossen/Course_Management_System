@@ -10,9 +10,7 @@ const TopInstructors = () => {
   useEffect(() => {
     const fetchInstructors = async () => {
       try {
-        const res = await fetch(
-          "https://course-management-server-self.vercel.app/top-instructors"
-        );
+        const res = await fetch("http://localhost:3000/top-instructors");
         if (!res.ok) throw new Error("Failed to fetch instructors");
         const data = await res.json();
         setInstructors(data);

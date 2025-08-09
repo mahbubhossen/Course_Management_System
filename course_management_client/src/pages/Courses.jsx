@@ -12,9 +12,7 @@ const Courses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch(
-          "https://course-management-server-self.vercel.app/all-courses"
-        );
+        const res = await fetch("http://localhost:3000/all-courses");
         if (!res.ok) throw new Error("Failed to fetch courses");
         const data = await res.json();
         setCourses(data);
