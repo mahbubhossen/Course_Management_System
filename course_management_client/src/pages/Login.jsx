@@ -57,9 +57,9 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-18 my-3 p-6 sm:p-8 bg-white rounded shadow-md">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
-      <form onSubmit={handleLogin} className="space-y-4">
+    <div className="max-w-md mx-auto mt-18 my-3 p-6 sm:p-8 bg-white rounded shadow-md text-base-content">
+      <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Login</h2>
+      <form onSubmit={handleLogin} className="space-y-4 text-gray-800">
         <div>
           <label className="block font-medium text-sm sm:text-base">Email</label>
           <input
