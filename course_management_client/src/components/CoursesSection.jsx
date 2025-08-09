@@ -21,7 +21,7 @@ const CoursesSection = () => {
         const sortedCourses = data.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
-        setCourses(sortedCourses.slice(0, 6));
+        setCourses(sortedCourses.slice(0, 8));
       } catch (err) {
         setError(err.message);
         toast.error(`Error: ${err.message}`, { autoClose: 3000 });
@@ -54,10 +54,10 @@ const CoursesSection = () => {
       <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">
         Latest Courses
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {courses.map((course) => (
           <div
-            key={course._id}
+            key={course._id} 
             className="bg-white shadow-md rounded overflow-hidden flex flex-col"
           >
             <img

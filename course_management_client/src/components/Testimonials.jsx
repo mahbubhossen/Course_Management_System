@@ -2,8 +2,8 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <section className="bg-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-gray-100 py-12 mx-4 rounded mb-18">
+      <div className="max-w-7xl mx-auto px-4 ">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-8 text-center">
           What Our Students Say
         </h2>
